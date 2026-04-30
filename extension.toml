@@ -8,4 +8,4 @@ repository = "https://github.com/vlasikhin/zed-hosts"
 
 [grammars.hosts]
 repository = "https://github.com/vlasikhin/tree-sitter-hosts"
-rev = "<PLACEHOLDER_REPLACE_WITH_REAL_SHA>"
+rev = "5ab61f0130c0278a98de91ecccb6b3ca35988594"
