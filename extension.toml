@@ -8,4 +8,4 @@ repository = "https://github.com/vlasikhin/zed-hosts"
 
 [grammars.hosts]
 repository = "https://github.com/vlasikhin/tree-sitter-hosts"
-rev = "5ab61f0130c0278a98de91ecccb6b3ca35988594"
+rev = "63d71efa1ca8a45d691378c5a5acdd1c3a4ec447"
