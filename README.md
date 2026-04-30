@@ -24,30 +24,19 @@ Once published: open the command palette → `zed: extensions` → search for **
 
 Zed will fetch the grammar from `tree-sitter-hosts` at the pinned revision and compile it.
 
-## Make Zed recognize the bare `hosts` filename
+## File matching
 
-`/etc/hosts` has no extension, so Zed needs an explicit hint. Add to `~/.config/zed/settings.json`:
+`path_suffixes = ["hosts"]` (defined in `languages/hosts/config.toml`) already matches any path ending in `hosts`, including `/etc/hosts` and `/private/etc/hosts`. No extra configuration is needed for the standard case.
+
+If you want to apply the language to other filenames (e.g. `Hostfile`, `hosts.bak`, custom paths), add a `file_types` override to `~/.config/zed/settings.json`:
 
 ```json
 {
   "file_types": {
-    "Hosts": ["hosts", "**/etc/hosts", "**/private/etc/hosts"]
+    "Hosts": ["Hostfile", "**/custom/path/hosts.*"]
   }
 }
 ```
-
-Reload the file (or restart Zed) and the `Hosts` language will be applied.
-
-## Local testing
-
-`/etc/hosts` is read-only without `sudo`. To preview highlighting without editing the real file, copy it:
-
-```sh
-cp /etc/hosts ~/hosts-preview.hosts
-zed ~/hosts-preview.hosts
-```
-
-The `.hosts` suffix matches `path_suffixes` in `languages/hosts/config.toml` and triggers the language without any settings change.
 
 ## License
 
