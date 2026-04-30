@@ -1,0 +1,4 @@
+name = "Hosts"
+grammar = "hosts"
+path_suffixes = ["hosts"]
+line_comments = ["# "]
